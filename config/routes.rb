@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :products
+  end
   resources :products
+
   if Rails.env.development?
       mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
     end
