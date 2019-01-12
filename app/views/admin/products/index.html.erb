@@ -20,9 +20,9 @@
         <td><%= product.description %></td>
         <td><%= product.price %></td>
         <td><%= product.inventory_count %></td>
-        <td><%= link_to 'Show', admin_product %></td>
+        <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_admin_product_path(product) %></td>
-        <td><%= link_to 'Destroy', admin_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

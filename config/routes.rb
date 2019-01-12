@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  
   namespace :admin do
     resources :products
+    get 'products/:id/create', to: 'products#create'
+
   end
+ 
   resources :products
 
   if Rails.env.development?
