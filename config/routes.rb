@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :cart_items
+  resources :carts
   namespace :admin do
     resources :products
     get 'products/:id/create', to: 'products#create'
