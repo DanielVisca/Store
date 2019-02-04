@@ -1,6 +1,7 @@
 class CartItem < ApplicationRecord
   belongs_to :cart
   belongs_to :product
+  
 
   validates :product_id, presence: true
   validates :cart_id, presence: true

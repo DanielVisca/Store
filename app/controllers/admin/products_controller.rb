@@ -10,6 +10,7 @@ class Admin::ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    #render 'admin/products'
   end
 
   # GET /products/new
@@ -28,7 +29,8 @@ class Admin::ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        #redirect_to @product
+        format.html { redirect_to admin_products_path, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
@@ -56,7 +58,7 @@ class Admin::ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to admin_products_path, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

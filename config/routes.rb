@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   end
  
   resources :products
+  resources :carts
+
+  get 'products/:id/add_to_cart', to: 'products#add_to_cart', as: :add_to_cart
+  get 'carts/create', to: "carts#create", as: :cart_create
+  get 'carts/:id/purchase', to: "carts#purchase", as: :purchase
 
   if Rails.env.development?
       mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
