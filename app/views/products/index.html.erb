@@ -2,6 +2,12 @@
 
 <h1>Products</h1>
 
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -19,10 +25,15 @@
         <td><%= product.title %></td>
         <td><%= product.price %></td>
         <td><%= link_to 'Show', product %></td>
+        <td><%= product.inventory_count %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<h2>Create Cart</h2>
+<%= link_to "Create a cart", new_cart_path %>
 
+<h3>View Cart</h3>
+<h4> Purchase Cart </h4>

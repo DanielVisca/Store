@@ -20,4 +20,7 @@
   <%= @product.inventory_count %>
 </p>
 
+
+<%= link_to 'Add to cart', add_to_cart(@product.id) %>
+
 <%= link_to 'Back', products_path %>
