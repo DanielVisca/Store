@@ -1,6 +1,8 @@
 # Store
 This is in response to a coding challenge for Shopify's 2019 Summer Internship
 
+Hello :) My name is Daniel, thanks for checking out my store. It is definitely in its rough stages but it was fun to make so it wont be that way for long!
+
 <h2>Features:</h2> 
 <p>
 -GraphQL API <br>
