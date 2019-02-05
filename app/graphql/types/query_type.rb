@@ -12,8 +12,15 @@ Types::QueryType = GraphQL::ObjectType.define do
   end
 
   field :allProducts, !types[Types::ProductType] do
+    argument :inStock, types.Boolean, default_value: false
     description "All the products in this store"
-    resolve -> (obj, args, ctx) { Product.all }
+    resolve -> (obj, args, ctx) { 
+      if args[:inStock]
+        Product.where.not(inventory_count: 0)
+      else
+        Product.all
+      end
+    }
   end
 
 #  field :Product do
@@ -30,12 +37,12 @@ Types::QueryType = GraphQL::ObjectType.define do
     resolve -> (obj, args, ctx) { Cart.all }
   end
 
-#  field :Cart do
-#    type Types::CartItemType
-#    argument :id, !types.ID
-#    description 'Find a cart by ID'
-#    resolve -> (obj, args, ctx) {
-#      CartItem.where(cart: args[:id])
-#    }
-#  end
+  field :cart do
+    type Types::CartItemType
+    argument :id, !types.ID
+    description 'Find a cart by ID'
+    resolve -> (obj, args, ctx) {
+      CartItem.where(cart: args[:id])
+    }
+  end
 end
