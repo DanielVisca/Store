@@ -1,24 +1,17 @@
-# README
+# Store
+This is in response to a coding challenge for Shopify's 2019 Summer Internship
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h2>Features:</h2> 
+<p>
+-GraphQL API <br>
+-carts with total dollar amounts and purchase option <br>
+-front-end <br>
+... To be added to <br>
+Unit tests.
 
-Things you may want to cover:
+Current and Potential Issues. <br>
+-When no carts currently exist in the database and an item is added to a cart <br>
+-Empty carts can be abandoned and left in the database
+</p>
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
