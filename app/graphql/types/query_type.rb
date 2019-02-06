@@ -11,6 +11,14 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
+#  field :add_to_cart do
+#    type Types::ProductType
+#    argument :id, !types.ID
+#    resolve -> (obj, args, ctx) {
+#      Product.add_to_cart(args[:id])
+#    }
+#  end
+
   field :allProducts, !types[Types::ProductType] do
     argument :inStock, types.Boolean, default_value: false
     description "All the products in this store"
