@@ -33,4 +33,19 @@ Mutations::MutationType = GraphQL::ObjectType.define do
     cart
     }
   end
+
+  field :addToCart, !types[Types::CartType] do
+    description 'Add a product to a cart'
+    argument :cart_id, types.ID, default_value: Cart.last.id
+    argument :product_id, !types.ID
+    argument :quantity, types.Int, default_value: 1
+    resolve ->(obj, args, ctx) {
+      #create a line item
+      CartItem.create(cart_id: args[:cart_id], 
+                      product_id: args[:product_id], 
+                      quantity: args[:quantity]
+                     )
+      CartItem.where(cart_id: Cart.find_by_id(args[:cart_id]))
+    }
+  end
 end
