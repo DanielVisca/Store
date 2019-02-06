@@ -1,4 +1,4 @@
 StoreSchema = GraphQL::Schema.define do
-  mutation(Types::MutationType)
+  mutation(Mutations::MutationType)
   query(Types::QueryType)
 end
