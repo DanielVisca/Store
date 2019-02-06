@@ -13,7 +13,53 @@ Unit tests.
 
 Current and Potential Issues. <br>
 -When no carts currently exist in the database and an item is added to a cart <br>
--Empty carts can be abandoned and left in the database
+-Empty carts can be abandoned and left in the database <br>
+-Mutations are not currently set up, so purchasing cannot be done through graphQL <br>
+-Some queries are not set up and will result in an error.
 </p>
 
+<Strong>Example Queries </Strong> 
+<p>
+{ 
+  allProducts(inStock: true) {
+    title
+    id
+  }
+  cart(id: 47) {
+    cart_items {
+      id
+    }
+    product(id: 25) {
+      id
+    }
+  }
+  product(id: 20) {
+    title
+  }
+}
+  </p>
+  <p>
+  {
+  allProducts(inStock: true) {
+    title
+    description
+    price
+    inventory_count
+  }
+  product(id: 20) {
+    title
+    description
+    price
+    inventory_count
+  }
+  cart(id: 47) {
+    cart_items {
+      id
+    }
+    product(id: 25) {
+      id
+    }
+  }
+  </p>
+}
 
