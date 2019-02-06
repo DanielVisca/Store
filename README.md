@@ -7,6 +7,7 @@ Hello :) My name is Daniel, thanks for checking out my store. It is definitely i
 <p>
 -GraphQL API <br>
 -carts with total dollar amounts and purchase option <br>
+-carts are destroyed after being purchased <br>
 -front-end <br>
 ... To be added to <br>
 Unit tests.
